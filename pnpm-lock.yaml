@@ -8,16 +8,19 @@ importers:
 
   .:
     dependencies:
+      '@carbon/icons':
+        specifier: ^11.52.0
+        version: 11.52.0
       '@carbon/styles':
         specifier: ^1.68.0
         version: 1.68.0(sass@1.80.4)
+      '@carbon/web-components':
+        specifier: ^2.16.0
+        version: 2.16.0(sass@1.80.4)
       sass:
         specifier: ^1.80.4
         version: 1.80.4
     devDependencies:
-      '@carbon/web-components':
-        specifier: ^2.16.0
-        version: 2.16.0(sass@1.80.4)
       vite:
         specifier: ^5.4.0
         version: 5.4.0(sass@1.80.4)
@@ -35,6 +38,9 @@ packages:
 
   '@carbon/grid@11.29.0':
     resolution: {integrity: sha512-SAJhTexN6TjbItcUczOqhzgHBGXLhvUhlTdyqj+wzUH0tqEN8g6gLp+1sn9+rL+kV4obSb/7bdSESZtwQr/tQg==}
+
+  '@carbon/icons@11.52.0':
+    resolution: {integrity: sha512-2yjm1Dl9emq4A6jgCQTSbujQgU1PeoeN5rvuEbgDzLd9HCxSNUHiOjpFurlmqo9L/52SE/IXPUJgMv8Bi5XHGw==}
 
   '@carbon/layout@11.28.0':
     resolution: {integrity: sha512-Yl0Dsxs00EgAaCKpZCXgebuf9BwiBK66a1Oiao6D12p3ViciZ4L18mlRgOPBcDlolP2tUtncz48TlfkWC097hQ==}
@@ -563,6 +569,10 @@ snapshots:
   '@carbon/grid@11.29.0':
     dependencies:
       '@carbon/layout': 11.28.0
+      '@ibm/telemetry-js': 1.7.1
+
+  '@carbon/icons@11.52.0':
+    dependencies:
       '@ibm/telemetry-js': 1.7.1
 
   '@carbon/layout@11.28.0':

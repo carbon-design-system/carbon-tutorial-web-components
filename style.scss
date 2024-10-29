@@ -1,6 +1,8 @@
 @use '@carbon/styles/scss/reset';
 @use '@carbon/styles/scss/theme' as *;
 @use '@carbon/styles/scss/themes';
+@use '@carbon/styles/scss/spacing' as *; // near top of file
+@use '@carbon/styles/scss/type' as *; // place at top of file
 
 :root {
   @include theme(themes.$g10);
@@ -16,4 +18,90 @@
 
 .g100 {
   @include theme(themes.$g100);
+}
+
+:root .compliment {
+  @include theme(themes.$g100);
+
+  @media (prefers-color-scheme: dark) {
+    @include theme(themes.$g10);
+  }
+}
+
+.g10 .compliment {
+  @include theme(themes.$g100);
+}
+
+.g100 .compliment {
+  @include theme(themes.$g10);
+}
+
+.app {
+  display: grid;
+  grid-template-rows: $spacing-09 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.action-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: $text-primary;
+}
+
+.notification .action-icon {
+  -webkit-mask: url(./notification.svg) no-repeat center;
+  mask: url(./notification.svg) no-repeat center;
+}
+
+.user-avatar .action-icon {
+  -webkit-mask: url(./user--avatar.svg) no-repeat center;
+  mask: url(./user--avatar.svg) no-repeat center;
+}
+
+.app-switcher .action-icon {
+  -webkit-mask: url(./switcher.svg) no-repeat center;
+  mask: url(./switcher.svg) no-repeat center;
+}
+
+.header-panel__content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-05;
+  padding: $spacing-05;
+}
+
+.header-panel__title {
+  @include type-style('productive-heading-02');
+}
+
+.theme-selector__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: $text-primary;
+}
+
+cds-content-switcher-item[selected] .theme-selector__icon {
+  /* switch icon color when selected */
+  background-color: $background;
+}
+
+.theme-selector__icon--light {
+  -webkit-mask: url(./sun.svg) no-repeat center;
+  mask: url(./sun.svg) no-repeat center;
+}
+
+.theme-selector__icon--system {
+  -webkit-mask: url(./brightness-contrast.svg) no-repeat center;
+  mask: url(./brightness-contrast.svg) no-repeat center;
+}
+
+.theme-selector__icon--dark {
+  -webkit-mask: url(./moon.svg) no-repeat center;
+  mask: url(./moon.svg) no-repeat center;
 }
