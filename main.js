@@ -7,7 +7,10 @@ import '@carbon/web-components/es/components/skip-to-content/index.js';
 import '@carbon/web-components/es/components/breadcrumb/index';
 import '@carbon/web-components/es/components/tabs/index';
 import '@carbon/web-components/es/components/data-table/index.js';
+import '@carbon/web-components/es/components/link/index';
+import { Octokit } from '@octokit/core';
 
+const octokitClient = new Octokit({});
 const bodyEl = document.querySelector('body');
 
 const handleGlobalActionClick = (ev) => {
@@ -54,35 +57,7 @@ document
   .querySelector('.theme-header__compliment')
   .addEventListener('cds-checkbox-changed', handleHeaderCompliment);
 
-let data = [
-  {
-    name: 'Repo A',
-    created: 'Date',
-    updated: 'Date',
-    openIssues: 123,
-    stars: 456,
-    links: 'Links',
-    expansion: 'Row description',
-  },
-  {
-    name: 'Repo B',
-    created: 'Date',
-    updated: 'Date',
-    openIssues: 123,
-    stars: 456,
-    links: 'Links',
-    expansion: 'Row description',
-  },
-  {
-    name: 'Repo D',
-    created: 'Date',
-    updated: 'Date',
-    openIssues: 123,
-    stars: 456,
-    links: 'Links',
-    expansion: 'Row description',
-  },
-];
+let data = [];
 
 const updateTable = () => {
   const tableRowTemplate = document.querySelector(
@@ -96,11 +71,57 @@ const updateTable = () => {
       const keys = Object.keys(row);
       keys.forEach((key) => {
         const keyEl = newRow.querySelector(`[key="${key}"]`);
-        keyEl.innerHTML = row[key];
+        if (key === 'links') {
+          keyEl.innerHTML = `<ul class="link-list">
+  <li>
+    <cds-link href="${row[key].url}">Github</cds-link>
+  </li>
+  <li>
+    <cds-link href="${row[key].homepage}">Homepage</cds-link>
+  </li>
+</ul>`;
+        } else {
+          keyEl.innerHTML = row[key];
+        }
       });
       tableBody.appendChild(newRow);
     });
   }
 };
 
-updateTable();
+const replaceSkeleton = () => {
+  const tableSkeleton = document.querySelector('cds-table-skeleton');
+  const tableTemplate = document.querySelector('template#template--table');
+
+  if (tableSkeleton && tableTemplate) {
+    tableSkeleton.replaceWith(tableTemplate.content.cloneNode(true));
+    updateTable();
+  }
+};
+
+const fetchData = async () => {
+  const res = await octokitClient.request('GET /orgs/{org}/repos', {
+    org: 'carbon-design-system',
+    per_page: 75,
+    sort: 'updated',
+    direction: 'desc',
+  });
+
+  if (res.status === 200) {
+    data = res.data.map((row) => ({
+      name: row.name,
+      created: new Date(row.created_at).toLocaleDateString(),
+      updated: new Date(row.updated_at).toLocaleDateString(),
+      openIssues: row.open_issues_count,
+      stars: row.stargazers_count,
+      links: { url: row.html_url, homepage: row.homepage },
+      expansion: row.description,
+    }));
+
+    // replace table here
+    replaceSkeleton();
+  } else {
+    console.log('Error obtaining repository data');
+  }
+};
+fetchData();

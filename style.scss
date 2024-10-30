@@ -173,3 +173,22 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 .repo-page__r1 {
   padding-block: $spacing-05;
 }
+
+.link-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.link-list li:not(:last-child) {
+  padding-inline-end: $spacing-02;
+
+  &::after {
+    content: '|';
+    display: inline;
+  }
+}
+
+.link-list li:not(:first-child) {
+  padding-left: $spacing-02;
+}
