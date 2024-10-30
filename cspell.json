@@ -1,0 +1,9 @@
+{
+  "version": "0.1",
+  "language": "en",
+  "dictionaries": [],
+  "dictionaryDefinitions": [],
+  "enabledLanguageIds": ["css", "git-commit", "html", "javascript", "json", "markdown", "plaintext", "scss", "text"],
+  "ignorePaths": ["node_modules", "dist", "package.json", "*.log", "CHANGELOG.md"],
+  "words": ["illo"]
+}

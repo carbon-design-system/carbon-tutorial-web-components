@@ -9,10 +9,12 @@
     "preview": "vite preview",
     "lint:es": "eslint . main.js --report-unused-disable-directives --max-warnings 0",
     "lint:format": "prettier ./**/*.{js,jsx,ts,tsx,md,mdx,scss} --write --ignore-unknown --no-error-on-unmatched-pattern --log-level warn",
+    "lint:spell": "cspell lint --quiet \"**/*.{js,css,scss,md}\"",
     "lint:style": "pnpm stylelint '**/*.scss'"
   },
   "devDependencies": {
     "@double-great/stylelint-a11y": "^3.0.2",
+    "cspell": "^8.15.5",
     "eslint": "^9.13.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.11.0",
