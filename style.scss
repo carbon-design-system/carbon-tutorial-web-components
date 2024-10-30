@@ -114,7 +114,9 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 .page-landing__banner {
   padding-block: $spacing-05 $spacing-13;
   background: $layer-01;
-  box-shadow: $spacing-06 0 0 $layer-01, -1 * $spacing-06 0 0 $layer-01;
+  box-shadow:
+    $spacing-06 0 0 $layer-01,
+    -1 * $spacing-06 0 0 $layer-01;
 }
 
 .page-landing__heading {
