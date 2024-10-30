@@ -41,18 +41,18 @@
 .app {
   display: grid;
   grid-template-rows: $spacing-09 1fr;
-  height: 100vh;
+  block-size: 100vh;
   overflow: hidden;
 }
 
 .main {
-  height: 100%;
+  block-size: 100%;
   overflow-y: auto;
 }
 
 .action-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
   background-color: $text-primary;
 }
 
@@ -80,8 +80,8 @@
 }
 
 .theme-selector__icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
   background-color: $text-primary;
 }
 
@@ -124,22 +124,23 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 }
 
 .page-landing__illo {
-  max-width: 100%;
+  max-inline-size: 100%;
   float: inline-end;
-  height: auto;
+  block-size: auto;
 }
 
 @include breakpoint-down(md) {
   .page-landing__illo {
-    max-width: 528px;
-    width: 100%;
-    height: 100%;
+    max-inline-size: 528px;
+    inline-size: 100%;
+    block-size: 100%;
     float: inline-start;
   }
 }
 
 .page-landing__tabs {
-  margin: (-1 * $spacing-08) 0 $spacing-08;
+  margin-block: (-1 * $spacing-08) $spacing-08;
+  margin-inline: 0;
 }
 
 .page-landing__tab-content {
@@ -154,8 +155,8 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 
 .page-landing__p {
   @include type-style('productive-heading-03');
-  margin-top: $spacing-06;
-  margin-bottom: $spacing-08;
+
+  margin-block: $spacing-06 $spacing-08;
 }
 
 .page-landing__r3 {
@@ -183,7 +184,7 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 }
 
 .link-list li:not(:first-child) {
-  padding-left: $spacing-02;
+  padding-inline-start: $spacing-02;
 }
 
 .info-section__heading {
@@ -193,8 +194,8 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 }
 
 .info-card__pictogram {
-  width: $spacing-10;
-  height: $spacing-10;
+  inline-size: $spacing-10;
+  block-size: $spacing-10;
   background-color: $text-primary;
 }
 
@@ -212,29 +213,29 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 
 .info-card {
   display: flex;
-  height: 300px;
+  block-size: 300px;
   flex-direction: column;
   justify-content: space-between;
   padding-inline: $spacing-05;
-  border-left: 1px solid $border-subtle;
+  border-inline-start: 1px solid $border-subtle;
 
   @include breakpoint-down(xlg) {
     &:nth-of-type(2) {
-      border-left: none;
-      padding-left: 0;
+      border-inline-start: none;
+      padding-inline-start: 0;
     }
   }
 
   @include breakpoint-down(lg) {
     flex-direction: row-reverse;
-    border-left: none;
+    border-inline-start: none;
     padding-inline: 0;
     gap: $spacing-07;
-    padding-top: $spacing-10;
-    height: initial;
+    padding-block-start: $spacing-10;
+    block-size: initial;
 
     &:nth-of-type(2) {
-      padding-top: 0;
+      padding-block-start: 0;
     }
   }
 }
@@ -242,11 +243,11 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 .info-card__heading {
   @include type-style('heading-03');
 
-  margin-top: 0;
+  margin-block-start: 0;
 }
 
 .info-card__body {
   @include type-style('body-long-01');
 
-  margin-top: $spacing-06;
+  margin-block-start: $spacing-06;
 }
