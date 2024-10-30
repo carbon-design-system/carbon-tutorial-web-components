@@ -192,3 +192,68 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 .link-list li:not(:first-child) {
   padding-left: $spacing-02;
 }
+
+.info-section__heading {
+  @include type-style('heading-01');
+
+  padding-block-end: $spacing-08;
+}
+
+.info-card__pictogram {
+  width: $spacing-10;
+  height: $spacing-10;
+  background-color: $text-primary;
+}
+
+.info-card__pictogram--accelerating-transformation {
+  mask: url(./accelerating-transformation.svg) no-repeat center;
+}
+
+.info-card__pictogram--advocate {
+  mask: url(./advocate.svg) no-repeat center;
+}
+
+.info-card__pictogram--globe {
+  mask: url(./globe.svg) no-repeat center;
+}
+
+.info-card {
+  display: flex;
+  height: 300px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-inline: $spacing-05;
+  border-left: 1px solid $border-subtle;
+
+  @include breakpoint-down(xlg) {
+    &:nth-of-type(2) {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+
+  @include breakpoint-down(lg) {
+    flex-direction: row-reverse;
+    border-left: none;
+    padding-inline: 0;
+    gap: $spacing-07;
+    padding-top: $spacing-10;
+    height: initial;
+
+    &:nth-of-type(2) {
+      padding-top: 0;
+    }
+  }
+}
+
+.info-card__heading {
+  @include type-style('heading-03');
+
+  margin-top: 0;
+}
+
+.info-card__body {
+  @include type-style('body-long-01');
+
+  margin-top: $spacing-06;
+}

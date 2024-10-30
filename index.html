@@ -125,19 +125,16 @@
       </div>
       <div class="page--landing__r3 cds--css-grid-column cds--col-span-100">
         <div class="cds--subgrid cds--subgrid--full-wide">
-          <div class="page--landing__label cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-2 cds--lg:col-span-4">
-            The principles
+          <div class="info-section__column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-16 cds--xlg:col-span-4 cds--css-grid-column">
+            <h3 class="info-section__heading">The Principles</h3>
           </div>
-          <div
-            class="page--landing__title cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-6 cds--md:col-start-3 cds--lg:col-span-4 cds--lg:col-start-5">
+          <div class="info-card">
             Carbon is open
           </div>
-          <div
-            class="page--landing__title cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-6 cds--md:col-start-3 cds--lg:col-span-4 cds--lg:col-start-9">
+          <div class="info-card">
             Carbon is modular
           </div>
-          <div
-            class="page--landing__title cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-6 cds--md:col-start-3 cds--lg:col-span-4 cds--lg:col-start-13">
+          <div class="info-card">
             Carbon is consistent
           </div>
         </div>
@@ -145,5 +142,16 @@
     </div>
   </main>
 </body>
+<template id="template--info-card">
+  <div class="info-card cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-5 cds--xlg:col-span-4 cds--css-grid-column">
+    <div class="info-card__uppder">
+      <h4 class="info-card__heading">Carbon is <strong class="info-card__heading--strong">thing goes here</strong></h4>
+      <p class="info-card__body">
+        Body goes here
+      </p>
+    </div>
+    <div class="info-card__pictogram"></div>
+  </div>
+</template>
 
 </html>
