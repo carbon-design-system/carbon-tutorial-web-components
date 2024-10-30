@@ -10,8 +10,11 @@
     "lint:style": "pnpm stylelint '**/*.scss'"
   },
   "devDependencies": {
+    "@double-great/stylelint-a11y": "^3.0.2",
     "stylelint": "^16.10.0",
+    "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-plugin-carbon-tokens": "^3.2.1",
+    "stylelint-use-logical-spec": "^5.0.1",
     "vite": "^5.4.0"
   },
   "dependencies": {
