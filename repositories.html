@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/carbon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carbon tutorial web components</title>
+  <script type="module" crossorigin src="/repositories.cjs"></script>
+  <link rel="modulepreload" crossorigin href="/main-MA6ol7ql.cjs">
+  <link rel="stylesheet" crossorigin href="/style.css">
+</head>
+
+<body class="app">
+  <header>
+    <cds-header class="compliment">
+      <cds-skip-to-content href="#main-content"></cds-skip-to-content>
+      <cds-header-menu-button button-label-active="Close menu" button-label-inactive="Open menu"></cds-header-menu-button>
+      <cds-header-name href="/" prefix="IBM">Carbon Tutorial</cds-header-name>
+      <cds-header-nav menu-bar-label="Carbon Tutorial">
+        <cds-header-nav-item href="./repositories.html">Repositories</cds-header-nav-item>
+      </cds-header-nav>
+      <cds-side-nav is-not-persistent aria-label="Side navigation" collapse-mode="${SIDE_NAV_COLLAPSE_MODE.RESPONSIVE}">
+        <cds-side-nav-items>
+          <cds-side-nav-link href="./repositories.html">
+            Repositories
+          </cds-side-nav-link>
+        </cds-side-nav-items>
+      </cds-side-nav>
+      <div class="cds--header__global">
+        <cds-header-global-action aria-label="Notifications" class="notification" panel-id="notification-panel">
+          <div class="action-icon" slot="icon"></div>
+        </cds-header-global-action>
+        <cds-header-global-action aria-label="User Profile" class="user-avatar" panel-id="user-profile-panel">
+          <div class="action-icon" slot="icon"></div>
+        </cds-header-global-action>
+        <cds-header-global-action aria-label="App Switcher" class="app-switcher" panel-id="app-switcher-panel">
+          <div class="action-icon" slot="icon"></div>
+        </cds-header-global-action>
+        <cds-header-panel id="notification-panel" aria-label="Notification Panel">Notification Panel</cds-header-panel>
+        <cds-header-panel id="user-profile-panel" aria-label="User profile Panel">
+          <div class="header-panel__content">
+            <h2 class="header-panel__title">User profile Panel</h2>
+
+            <cds-content-switcher value="system" class="theme-selector">
+              <cds-content-switcher-item icon value="light">
+                <div class="theme-selector__icon theme-selector__icon--light"></div>
+                <span slot="tooltip-content">Light theme</span>
+              </cds-content-switcher-item>
+              <cds-content-switcher-item icon value="system">
+                <div class="theme-selector__icon theme-selector__icon--system"></div>
+                <span slot="tooltip-content">System theme</span>
+              </cds-content-switcher-item>
+              <cds-content-switcher-item icon value="dark">
+                <div class="theme-selector__icon theme-selector__icon--dark"></div>
+                <span slot="tooltip-content">Dark theme</span>
+              </cds-content-switcher-item>
+            </cds-content-switcher>
+            <cds-checkbox id="theme-header__compliment" class="theme-header__compliment" checked name="theme-header__compliment">Global header reverse
+              theme</cds-checkbox>
+          </div>
+        </cds-header-panel>
+        <cds-header-panel id="app-switcher-panel" aria-label="App switcher Panel">App switcher Panel</cds-header-panel>
+      </div>
+    </cds-header>
+  </header>
+  <main id="main-content" class="main">
+    <div class="page page-repositories cds--css-grid cds--css-grid--full-width">
+      <div class="repo-page__r1 cds--css-grid-column cds--col-span-100">
+        <cds-table-skeleton></cds-table-skeleton>
+      </div>
+    </div>
+  </main>
+</body>
+
+<template id="template--table">
+  <cds-table expandable>
+    <cds-table-header-title slot="title">Carbon Repositories</cds-table-header-title>
+    <cds-table-header-description slot="description">A collection of public Carbon repositories.</cds-table-header-description>
+    <cds-table-head>
+      <cds-table-header-row>
+        <cds-table-header-cell>Name</cds-table-header-cell>
+        <cds-table-header-cell>Created</cds-table-header-cell>
+        <cds-table-header-cell>Updated</cds-table-header-cell>
+        <cds-table-header-cell>Open issues</cds-table-header-cell>
+        <cds-table-header-cell>Stars</cds-table-header-cell>
+        <cds-table-header-cell>Links</cds-table-header-cell>
+      </cds-table-header-row>
+    </cds-table-head>
+    <cds-table-body>Table body goes here</cds-table-body>
+  </cds-table>
+  <cds-pagination backward-text="Previous page" forward-text="Next page" itemsPerPageText="Items per page">
+    <cds-select-item value="10">10</cds-select-item>
+    <cds-select-item value="20">20</cds-select-item>
+    <cds-select-item value="30">30</cds-select-item>
+    <cds-select-item value="40">40</cds-select-item>
+    <cds-select-item value="50">50</cds-select-item>
+  </cds-pagination>
+</template>
+
+<template id="template--table-row">
+  <cds-table-row>
+    <cds-table-cell key="name">Repo 1</cds-table-cell>
+    <cds-table-cell key="created">Date</cds-table-cell>
+    <cds-table-cell key="updated">Date</cds-table-cell>
+    <cds-table-cell key="openIssues">123</cds-table-cell>
+    <cds-table-cell key="stars">456</cds-table-cell>
+    <cds-table-cell key="links">Links</cds-table-cell>
+  </cds-table-row>
+  <cds-table-expanded-row key="expansion">Repo description</cds-table-expanded-row>
+</template>
+
+</html>
