@@ -1,8 +1,8 @@
 @use '@carbon/styles/scss/reset';
 @use '@carbon/styles/scss/theme' as *;
 @use '@carbon/styles/scss/themes';
-@use '@carbon/styles/scss/spacing' as *; // near top of file
-@use '@carbon/styles/scss/type' as *; // place at top of file
+@use '@carbon/styles/scss/spacing' as *; /* near top of file */
+@use '@carbon/styles/scss/type' as *; /* place at top of file */
 @use '@carbon/styles/scss/grid';
 @use '@carbon/styles/scss/breakpoint' as *;
 
@@ -109,7 +109,6 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 }
 
 .page {
-  // remove
   padding: 0;
 
   > * {
@@ -156,7 +155,7 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 .page--landing__subheading {
   @include type-style('productive-heading-03');
 
-  font-weight: 600;
+  font-weight: font-weight('semibold');
 }
 
 .page--landing__p {

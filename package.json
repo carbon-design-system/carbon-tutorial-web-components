@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:style": "pnpm stylelint '**/*.scss'"
   },
   "devDependencies": {
+    "stylelint": "^16.10.0",
+    "stylelint-plugin-carbon-tokens": "^3.2.1",
     "vite": "^5.4.0"
   },
   "dependencies": {

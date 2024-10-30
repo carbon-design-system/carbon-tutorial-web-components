@@ -1,0 +1,7 @@
+{
+  "extends": ["stylelint-plugin-carbon-tokens/config/recommended"],
+  "plugins": ["stylelint-plugin-carbon-tokens"],
+  "reportNeedlessDisables": true,
+  "reportInvalidScopeDisables": true,
+  "reportDescriptionlessDisables": true
+}
