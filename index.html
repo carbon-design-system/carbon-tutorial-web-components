@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite-js-carbon-web-components/carbon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carbon tutorial web components</title>
+  <script type="module" crossorigin src="/vite-js-carbon-web-components/assets/index-lSP4sIIS.js"></script>
+  <link rel="stylesheet" crossorigin href="/vite-js-carbon-web-components/assets/index-BU6P0FA5.css">
+</head>
+
+<body class="app">
+  <header>
+    <cds-header class="compliment">
+      <cds-skip-to-content href="#main-content"></cds-skip-to-content>
+      <cds-header-menu-button button-label-active="Close menu" button-label-inactive="Open menu"></cds-header-menu-button>
+      <cds-header-name href="/" prefix="IBM">Carbon Tutorial</cds-header-name>
+      <cds-header-nav menu-bar-label="Carbon Tutorial">
+        <cds-header-nav-item href="./repositories.html">Repositories</cds-header-nav-item>
+      </cds-header-nav>
+      <cds-side-nav is-not-persistent aria-label="Side navigation" collapse-mode="${SIDE_NAV_COLLAPSE_MODE.RESPONSIVE}">
+        <cds-side-nav-items>
+          <cds-side-nav-link href="./repositories.html">
+            Repositories
+          </cds-side-nav-link>
+        </cds-side-nav-items>
+      </cds-side-nav>
+      <div class="cds--header__global">
+        <cds-header-global-action aria-label="Notifications" class="notification" panel-id="notification-panel">
+          <div class="action-icon" slot="icon"></div>
+        </cds-header-global-action>
+        <cds-header-global-action aria-label="User Profile" class="user-avatar" panel-id="user-profile-panel">
+          <div class="action-icon" slot="icon"></div>
+        </cds-header-global-action>
+        <cds-header-global-action aria-label="App Switcher" class="app-switcher" panel-id="app-switcher-panel">
+          <div class="action-icon" slot="icon"></div>
+        </cds-header-global-action>
+        <cds-header-panel id="notification-panel" aria-label="Notification Panel">Notification Panel</cds-header-panel>
+        <cds-header-panel id="user-profile-panel" aria-label="User profile Panel">
+          <div class="header-panel__content">
+            <h2 class="header-panel__title">User profile Panel</h2>
+
+            <cds-content-switcher value="system" class="theme-selector">
+              <cds-content-switcher-item icon value="light">
+                <div class="theme-selector__icon theme-selector__icon--light"></div>
+                <span slot="tooltip-content">Light theme</span>
+              </cds-content-switcher-item>
+              <cds-content-switcher-item icon value="system">
+                <div class="theme-selector__icon theme-selector__icon--system"></div>
+                <span slot="tooltip-content">System theme</span>
+              </cds-content-switcher-item>
+              <cds-content-switcher-item icon value="dark">
+                <div class="theme-selector__icon theme-selector__icon--dark"></div>
+                <span slot="tooltip-content">Dark theme</span>
+              </cds-content-switcher-item>
+            </cds-content-switcher>
+            <cds-checkbox id="theme-header__compliment" class="theme-header__compliment" checked name="theme-header__compliment">Global header reverse
+              theme</cds-checkbox>
+          </div>
+        </cds-header-panel>
+        <cds-header-panel id="app-switcher-panel" aria-label="App switcher Panel">App switcher Panel</cds-header-panel>
+      </div>
+    </cds-header>
+  </header>
+  <main id="main-content" class="main">
+    <div class="page page-landing cds--css-grid cds--css-grid--full-width">
+      <div class="page-landing__banner cds--css-grid-column cds--col-span-100">
+        <cds-breadcrumb noTrailingSlash aria-label="Page navigation">
+          <cds-breadcrumb-item>
+            <a href="/">Getting started</a>
+          </cds-breadcrumb-item>
+        </cds-breadcrumb>
+        <h1 class="page-landing__heading">Design &amp; build with Carbon</h1>
+      </div>
+      <div class="page-landing__r2 cds--css-grid-column cds--col-span-100">
+        <cds-tabs value="about" class="page-landing__tabs">
+          <cds-tab id="tab-about" value="about" target="panel-about">About</cds-tab>
+          <cds-tab id="tab-design" value="design" target="panel-design">Design</cds-tab>
+          <cds-tab id="tab-develop" value="develop" target="panel-develop">Develop</cds-tab>
+        </cds-tabs>
+        <div id="panel-about" role="tabpanel" aria-labelledby="tab-about">
+          <div class="cds--subgrid cds--subgrid--full-wide">
+            <div class="page-landing__tab-content cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-4 cds--lg:col-span-7">
+              <h3 class="page-landing__subheading">What is Carbon?</h3>
+              <p class="page-landing__p">
+                Carbon is IBM’s open-source design system for digital products and
+                experiences. With the IBM Design Language as its foundation, the system
+                consists of working code, design tools and resources, human interface
+                guidelines, and a vibrant community of contributors.
+              </p>
+              <cds-button>Learn more</cds-button>
+            </div>
+            <div class="cds--sm:col-span-4 cds--md:col-span-4 cds--lg:col-start-9 cds--lg:col-span-8 cds--css-grid-column">
+              <img class="page-landing__illo" src="./tab-illo.png" alt="Carbon illustration" width="640" height="498" />
+            </div>
+          </div>
+        </div>
+
+        <div id="panel-design" role="tabpanel" aria-labelledby="tab-design">
+          <div class="cds--subgrid cds--subgrid--full-wide">
+            <div class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-16">
+              <div class="page-landing__tab-content">
+                <p class="page-landing__p">
+                  Rapidly build beautiful and accessible experiences. The Carbon kit
+                  contains all resources you need to get started.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="panel-develop" role="tabpanel" aria-labelledby="tab-develop">
+          <div class="cds--subgrid cds--subgrid--full-wide">
+            <div class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-16">
+              <div class="page-landing__tab-content">
+                <p class="page-landing__p">
+                  Carbon provides components and styles for all. Whether using Vanilla,
+                  Web Components, React, or another reactive library, you can build with
+                  Carbon.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-landing__r3 cds--css-grid-column cds--col-span-100">
+        <div class="cds--subgrid cds--subgrid--full-wide">
+          <div class="info-section__column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-16 cds--xlg:col-span-4 cds--css-grid-column">
+            <h3 class="info-section__heading">The Principles</h3>
+          </div>
+          <div class="info-card">
+            Carbon is open
+          </div>
+          <div class="info-card">
+            Carbon is modular
+          </div>
+          <div class="info-card">
+            Carbon is consistent
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<template id="template--info-card">
+  <div class="info-card cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-5 cds--xlg:col-span-4 cds--css-grid-column">
+    <div class="info-card__uppder">
+      <h4 class="info-card__heading">Carbon is <strong class="info-card__heading--strong">thing goes here</strong></h4>
+      <p class="info-card__body">
+        Body goes here
+      </p>
+    </div>
+    <div class="info-card__pictogram"></div>
+  </div>
+</template>
+
+</html>
