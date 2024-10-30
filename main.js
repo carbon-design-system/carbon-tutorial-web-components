@@ -8,6 +8,7 @@ import '@carbon/web-components/es/components/breadcrumb/index';
 import '@carbon/web-components/es/components/tabs/index';
 import '@carbon/web-components/es/components/data-table/index.js';
 import '@carbon/web-components/es/components/link/index';
+import '@carbon/web-components/es/components/pagination/index';
 import { Octokit } from '@octokit/core';
 
 const octokitClient = new Octokit({});
@@ -58,6 +59,8 @@ document
   .addEventListener('cds-checkbox-changed', handleHeaderCompliment);
 
 let data = [];
+let pageSize = 10;
+let firstRowIndex = 0;
 
 const updateTable = () => {
   const tableRowTemplate = document.querySelector(
@@ -66,13 +69,16 @@ const updateTable = () => {
   const tableBody = document.querySelector('cds-table-body');
   if (tableBody && tableRowTemplate) {
     tableBody.innerHTML = '';
-    data.forEach((row) => {
-      let newRow = tableRowTemplate.content.cloneNode(true);
-      const keys = Object.keys(row);
-      keys.forEach((key) => {
-        const keyEl = newRow.querySelector(`[key="${key}"]`);
-        if (key === 'links') {
-          keyEl.innerHTML = `<ul class="link-list">
+    // iterate over data and render rows
+    data
+      .filter((v, i) => i >= firstRowIndex && i < firstRowIndex + pageSize)
+      .forEach((row) => {
+        let newRow = tableRowTemplate.content.cloneNode(true);
+        const keys = Object.keys(row);
+        keys.forEach((key) => {
+          const keyEl = newRow.querySelector(`[key="${key}"]`);
+          if (key === 'links') {
+            keyEl.innerHTML = `<ul class="link-list">
   <li>
     <cds-link href="${row[key].url}">Github</cds-link>
   </li>
@@ -80,12 +86,12 @@ const updateTable = () => {
     <cds-link href="${row[key].homepage}">Homepage</cds-link>
   </li>
 </ul>`;
-        } else {
-          keyEl.innerHTML = row[key];
-        }
+          } else {
+            keyEl.innerHTML = row[key];
+          }
+        });
+        tableBody.appendChild(newRow);
       });
-      tableBody.appendChild(newRow);
-    });
   }
 };
 
@@ -95,7 +101,11 @@ const replaceSkeleton = () => {
 
   if (tableSkeleton && tableTemplate) {
     tableSkeleton.replaceWith(tableTemplate.content.cloneNode(true));
+    // update table rows
     updateTable();
+
+    // update pagination
+    updatePagination();
   }
 };
 
@@ -125,3 +135,37 @@ const fetchData = async () => {
   }
 };
 fetchData();
+
+const handlePageChangeCurrent = ({ detail }) => {
+  firstRowIndex = (detail.page - 1) * detail.pageSize;
+  // Unfortunately not working - seems to lose the expanding row
+  // https://github.com/carbon-design-system/carbon/issues/#17894
+
+  updateTable();
+};
+
+const handlePageSizeChange = ({ detail }) => {
+  // Unfortunately not working
+  // https://github.com/carbon-design-system/carbon/issues/17713
+
+  pageSize = detail.pageSize;
+  updateTable();
+};
+
+const updatePagination = () => {
+  // update pagination to match data fetched
+  const paginationEl = document.querySelector('cds-pagination');
+  paginationEl.setAttribute('total-items', data.length);
+
+  setTimeout(() => {
+    // defer until after the dom is updated
+    paginationEl.addEventListener(
+      'cds-pagination-changed-current',
+      handlePageChangeCurrent,
+    );
+    paginationEl.addEventListener(
+      'cds-pagination-changed-page-size',
+      handlePageSizeChange,
+    );
+  }, 10);
+};
