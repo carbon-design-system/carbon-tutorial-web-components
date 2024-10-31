@@ -1,9 +1,4 @@
 import './style.scss';
-import '@carbon/web-components/es/components/button/button.js';
-import '@carbon/web-components/es/components/ui-shell/index';
-import '@carbon/web-components/es/components/checkbox/index';
-import '@carbon/web-components/es/components/content-switcher/index';
-import '@carbon/web-components/es/components/skip-to-content/index.js';
 const bodyEl = document.querySelector('body');
 
 const handleGlobalActionClick = (ev) => {

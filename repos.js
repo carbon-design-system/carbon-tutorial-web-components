@@ -1,6 +1,3 @@
-import '@carbon/web-components/es/components/data-table/index.js';
-import '@carbon/web-components/es/components/link/index';
-import '@carbon/web-components/es/components/pagination/index';
 import { Octokit } from '@octokit/core';
 
 const octokitClient = new Octokit({});
@@ -10,9 +7,7 @@ let pageSize = 10;
 let firstRowIndex = 0;
 
 const updateTable = () => {
-  const tableRowTemplate = document.querySelector(
-    'template#template--table-row',
-  );
+  const tableRowTemplate = document.querySelector('template#template--table-row');
   const tableBody = document.querySelector('cds-table-body');
   if (tableBody && tableRowTemplate) {
     tableBody.innerHTML = '';
@@ -106,13 +101,7 @@ const updatePagination = () => {
 
   setTimeout(() => {
     // defer until after the dom is updated
-    paginationEl.addEventListener(
-      'cds-pagination-changed-current',
-      handlePageChangeCurrent,
-    );
-    paginationEl.addEventListener(
-      'cds-pagination-changed-page-size',
-      handlePageSizeChange,
-    );
+    paginationEl.addEventListener('cds-pagination-changed-current', handlePageChangeCurrent);
+    paginationEl.addEventListener('cds-pagination-changed-page-size', handlePageSizeChange);
   }, 10);
 };
