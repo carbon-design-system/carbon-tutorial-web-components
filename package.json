@@ -1,11 +1,14 @@
 {
   "name": "carbon-tutorial-web-components",
+  "homepage": "https://github.com/carbon-design-system/carbon-tutorial-web-components",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "lint:es": "eslint . main.js --report-unused-disable-directives --max-warnings 0",
     "lint:format": "prettier ./**/*.{js,jsx,ts,tsx,md,mdx,scss} --write --ignore-unknown --no-error-on-unmatched-pattern --log-level warn",
@@ -17,6 +20,7 @@
     "cspell": "^8.15.5",
     "eslint": "^9.13.0",
     "eslint-config-prettier": "^9.1.0",
+    "gh-pages": "^6.2.0",
     "globals": "^15.11.0",
     "prettier": "^3.3.3",
     "stylelint": "^16.10.0",
