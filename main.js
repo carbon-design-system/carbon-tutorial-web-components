@@ -6,7 +6,6 @@ import '@carbon/web-components/es/components/content-switcher/index';
 import '@carbon/web-components/es/components/skip-to-content/index.js';
 import '@carbon/web-components/es/components/breadcrumb/index';
 import '@carbon/web-components/es/components/tabs/index';
-import '@carbon/web-components/es/components/data-table/index.js';
 import '@carbon/web-components/es/components/link/index';
 import '@carbon/web-components/es/components/pagination/index';
 import { Octokit } from '@octokit/core';
