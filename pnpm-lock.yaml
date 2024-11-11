@@ -12,11 +12,11 @@ importers:
         specifier: ^11.52.0
         version: 11.52.0
       '@carbon/styles':
-        specifier: ^1.68.0
-        version: 1.68.0(sass@1.80.4)
+        specifier: ^1.69.0
+        version: 1.69.0(sass@1.80.4)
       '@carbon/web-components':
-        specifier: ^2.16.0
-        version: 2.16.0(sass@1.80.4)
+        specifier: ^2.17.0
+        version: 2.17.0(sass@1.80.4)
       '@octokit/core':
         specifier: ^6.1.2
         version: 6.1.2
@@ -59,8 +59,8 @@ packages:
       sass:
         optional: true
 
-  '@carbon/styles@1.68.0':
-    resolution: {integrity: sha512-KzUGmUrsWAb9Ln1CfRc38ELHEf7VgTriWwwOcoAEMhurkwX4Qb5kUi1mQ4DYTaNRfdDr7sj20Mirq0di8dquqA==}
+  '@carbon/styles@1.69.0':
+    resolution: {integrity: sha512-sGULu6xXXvwipKyMYRgkHWezmT9qPwHxpD1bW2e7pzTIvy27g46Z3MP8xNtEzMIqEhmxBDh2P4imcKTusYHaQw==}
     peerDependencies:
       sass: ^1.33.0
     peerDependenciesMeta:
@@ -73,8 +73,8 @@ packages:
   '@carbon/type@11.33.0':
     resolution: {integrity: sha512-v3lfot0vcHNw6WDe32ap3ewpMGwUqhZ6z56sN11jzngRrWVPFgA9U7NciuoylFw301l2htJuZu0dBS2F4ViCXQ==}
 
-  '@carbon/web-components@2.16.0':
-    resolution: {integrity: sha512-MXkuiskAmNXRmVcXFDQ2c/NNFqDEyHQiAZJoU5BSxYYGiNFB1DQpjWhDsYGA78M2+zDDXxI0472h7w6/ff9q4w==}
+  '@carbon/web-components@2.17.0':
+    resolution: {integrity: sha512-sTFSNpImeJ4WwlDAxx3Q2OQV92zYHWqfZ/7wg6RPBTaXr9f23XCRUr2OBAEEJ7O5TnX4989Me2AAOBro2xM1PA==}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -636,7 +636,7 @@ snapshots:
     optionalDependencies:
       sass: 1.80.4
 
-  '@carbon/styles@1.68.0(sass@1.80.4)':
+  '@carbon/styles@1.69.0(sass@1.80.4)':
     dependencies:
       '@carbon/colors': 11.28.0
       '@carbon/feature-flags': 0.24.0
@@ -664,7 +664,7 @@ snapshots:
       '@carbon/layout': 11.28.0
       '@ibm/telemetry-js': 1.7.1
 
-  '@carbon/web-components@2.16.0(sass@1.80.4)':
+  '@carbon/web-components@2.17.0(sass@1.80.4)':
     dependencies:
       '@carbon/styles': 1.63.1(sass@1.80.4)
       '@floating-ui/dom': 1.6.11

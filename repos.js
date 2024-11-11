@@ -85,16 +85,10 @@ fetchData();
 
 const handlePageChangeCurrent = ({ detail }) => {
   firstRowIndex = (detail.page - 1) * detail.pageSize;
-  // Unfortunately not working - seems to lose the expanding row
-  // https://github.com/carbon-design-system/carbon/issues/#17894
-
   updateTable();
 };
 
 const handlePageSizeChange = ({ detail }) => {
-  // Unfortunately not working
-  // https://github.com/carbon-design-system/carbon/issues/17713
-
   pageSize = detail.pageSize;
   updateTable();
 };
@@ -111,7 +105,7 @@ const updatePagination = () => {
       handlePageChangeCurrent,
     );
     paginationEl.addEventListener(
-      'cds-pagination-changed-page-size',
+      'cds-page-sizes-select-changed',
       handlePageSizeChange,
     );
   }, 10);
