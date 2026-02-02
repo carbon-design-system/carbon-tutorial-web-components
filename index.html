@@ -78,47 +78,49 @@
           <cds-tab id="tab-design" value="design" target="panel-design">Design</cds-tab>
           <cds-tab id="tab-develop" value="develop" target="panel-develop">Develop</cds-tab>
         </cds-tabs>
-        <div id="panel-about" role="tabpanel" aria-labelledby="tab-about">
-          <cds-grid full-width>
-            <cds-column class="page-landing__tab-content" sm="4" md="4" lg="7">
-              <h3 class="page-landing__subheading">What is Carbon?</h3>
-              <p class="page-landing__p">
-                Carbon is IBM’s open-source design system for digital products and
-                experiences. With the IBM Design Language as its foundation, the system
-                consists of working code, design tools and resources, human interface
-                guidelines, and a vibrant community of contributors.
-              </p>
-              <cds-button>Learn more</cds-button>
-            </cds-column>
-            <cds-column sm="4" md="4" lg="span:8 start:9">
-              <img class="page-landing__illo" src="./tab-illo.png" alt="Carbon illustration" width="640" height="498" />
-            </cds-column>
-          </cds-grid>
-        </div>
-        <div id="panel-design" role="tabpanel" aria-labelledby="tab-design">
-          <cds-grid full-width>
-            <cds-column span="100%">
-              <div class="page-landing__tab-content">
+        <div class="page-landing__tab-panels">
+          <div id="panel-about" role="tabpanel" aria-labelledby="tab-about">
+            <cds-grid full-width>
+              <cds-column class="page-landing__tab-content" sm="4" md="4" lg="7">
+                <h3 class="page-landing__subheading">What is Carbon?</h3>
                 <p class="page-landing__p">
-                  Rapidly build beautiful and accessible experiences. The Carbon kit
-                  contains all resources you need to get started.
+                  Carbon is IBM’s open-source design system for digital products and
+                  experiences. With the IBM Design Language as its foundation, the system
+                  consists of working code, design tools and resources, human interface
+                  guidelines, and a vibrant community of contributors.
                 </p>
-              </div>
-            </cds-column>
-          </cds-grid>
-        </div>
-        <div id="panel-develop" role="tabpanel" aria-labelledby="tab-develop">
-          <cds-grid full-width>
-            <cds-column span="100%">
-              <div class="page-landing__tab-content">
-                <p class="page-landing__p">
-                  Carbon provides components and styles for all. Whether using Vanilla,
-                  Web Components, React, or another reactive library, you can build with
-                  Carbon.
-                </p>
-              </div>
-            </cds-column>
-          </cds-grid>
+                <cds-button>Learn more</cds-button>
+              </cds-column>
+              <cds-column sm="4" md="4" lg="span:8 start:9">
+                <img class="page-landing__illo" src="./tab-illo.png" alt="Carbon illustration" width="640" height="498" />
+              </cds-column>
+            </cds-grid>
+          </div>
+          <div id="panel-design" role="tabpanel" aria-labelledby="tab-design">
+            <cds-grid full-width>
+              <cds-column span="100%">
+                <div class="page-landing__tab-content">
+                  <p class="page-landing__p">
+                    Rapidly build beautiful and accessible experiences. The Carbon kit
+                    contains all resources you need to get started.
+                  </p>
+                </div>
+              </cds-column>
+            </cds-grid>
+          </div>
+          <div id="panel-develop" role="tabpanel" aria-labelledby="tab-develop">
+            <cds-grid full-width>
+              <cds-column span="100%">
+                <div class="page-landing__tab-content">
+                  <p class="page-landing__p">
+                    Carbon provides components and styles for all. Whether using Vanilla,
+                    Web Components, React, or another reactive library, you can build with
+                    Carbon.
+                  </p>
+                </div>
+              </cds-column>
+            </cds-grid>
+          </div>
         </div>
       </cds-column>
       <cds-column class="page-landing__r3" span="100%">
