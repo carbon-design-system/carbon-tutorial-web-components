@@ -7,7 +7,9 @@ let pageSize = 10;
 let firstRowIndex = 0;
 
 const updateTable = () => {
-  const tableRowTemplate = document.querySelector('template#template--table-row');
+  const tableRowTemplate = document.querySelector(
+    'template#template--table-row',
+  );
   const tableBody = document.querySelector('cds-table-body');
   if (tableBody && tableRowTemplate) {
     tableBody.innerHTML = '';

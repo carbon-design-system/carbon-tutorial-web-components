@@ -6,13 +6,14 @@
   <link rel="icon" type="image/svg+xml" href="/carbon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carbon tutorial web components</title>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.17.0/button.min.js"></script>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.17.0/ui-shell.min.js"></script>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.17.0/checkbox.min.js"></script>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.17.0/content-switcher.min.js"></script>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.17.0/skip-to-content.min.js"></script>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.17.0/tabs.min.js"></script>
-  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.17.0/breadcrumb.min.js"></script>
+  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.47.0/button.min.js"></script>
+  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.47.0/ui-shell.min.js"></script>
+  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.47.0/checkbox.min.js"></script>
+  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.47.0/content-switcher.min.js"></script>
+  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.47.0/skip-to-content.min.js"></script>
+  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.47.0/tabs.min.js"></script>
+  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.47.0/breadcrumb.min.js"></script>
+  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.47.0/grid.min.js"></script>
   <script type="module" src="/main.js"></script>
   <script type="module" src="/landing.js"></script>
 </head>
@@ -71,71 +72,71 @@
     </cds-header>
   </header>
   <main id="main-content" class="main">
-    <div class="page page-landing cds--css-grid cds--css-grid--full-width">
-      <div class="page-landing__banner cds--css-grid-column cds--col-span-100">
+    <cds-grid class="page page-landing" full-width>
+      <cds-column class="page-landing__banner" span="100%">
         <cds-breadcrumb noTrailingSlash aria-label="Page navigation">
           <cds-breadcrumb-item>
             <a href="/">Getting started</a>
           </cds-breadcrumb-item>
         </cds-breadcrumb>
         <h1 class="page-landing__heading">Design &amp; build with Carbon</h1>
-      </div>
-      <div class="page-landing__r2 cds--css-grid-column cds--col-span-100">
+      </cds-column>
+      <cds-column class="page-landing__r2" span="100%">
         <cds-tabs value="about" class="page-landing__tabs">
           <cds-tab id="tab-about" value="about" target="panel-about">About</cds-tab>
           <cds-tab id="tab-design" value="design" target="panel-design">Design</cds-tab>
           <cds-tab id="tab-develop" value="develop" target="panel-develop">Develop</cds-tab>
         </cds-tabs>
-        <div id="panel-about" role="tabpanel" aria-labelledby="tab-about">
-          <div class="cds--subgrid cds--subgrid--full-wide">
-            <div class="page-landing__tab-content cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-4 cds--lg:col-span-7">
-              <h3 class="page-landing__subheading">What is Carbon?</h3>
-              <p class="page-landing__p">
-                Carbon is IBM’s open-source design system for digital products and
-                experiences. With the IBM Design Language as its foundation, the system
-                consists of working code, design tools and resources, human interface
-                guidelines, and a vibrant community of contributors.
-              </p>
-              <cds-button>Learn more</cds-button>
-            </div>
-            <div class="cds--sm:col-span-4 cds--md:col-span-4 cds--lg:col-start-9 cds--lg:col-span-8 cds--css-grid-column">
-              <img class="page-landing__illo" src="./tab-illo.png" alt="Carbon illustration" width="640" height="498" />
-            </div>
-          </div>
-        </div>
-
-        <div id="panel-design" role="tabpanel" aria-labelledby="tab-design">
-          <div class="cds--subgrid cds--subgrid--full-wide">
-            <div class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-16">
-              <div class="page-landing__tab-content">
+        <div class="page-landing__tab-panels">
+          <div id="panel-about" role="tabpanel" aria-labelledby="tab-about">
+            <cds-grid full-width>
+              <cds-column class="page-landing__tab-content" sm="4" md="4" lg="7">
+                <h3 class="page-landing__subheading">What is Carbon?</h3>
                 <p class="page-landing__p">
-                  Rapidly build beautiful and accessible experiences. The Carbon kit
-                  contains all resources you need to get started.
+                  Carbon is IBM’s open-source design system for digital products and
+                  experiences. With the IBM Design Language as its foundation, the system
+                  consists of working code, design tools and resources, human interface
+                  guidelines, and a vibrant community of contributors.
                 </p>
-              </div>
-            </div>
+                <cds-button>Learn more</cds-button>
+              </cds-column>
+              <cds-column sm="4" md="4" lg="span:8 start:9">
+                <img class="page-landing__illo" src="./tab-illo.png" alt="Carbon illustration" width="604" height="498" />
+              </cds-column>
+            </cds-grid>
+          </div>
+          <div id="panel-design" role="tabpanel" aria-labelledby="tab-design">
+            <cds-grid full-width>
+              <cds-column span="100%">
+                <div class="page-landing__tab-content">
+                  <p class="page-landing__p">
+                    Rapidly build beautiful and accessible experiences. The Carbon kit
+                    contains all resources you need to get started.
+                  </p>
+                </div>
+              </cds-column>
+            </cds-grid>
+          </div>
+          <div id="panel-develop" role="tabpanel" aria-labelledby="tab-develop">
+            <cds-grid full-width>
+              <cds-column span="100%">
+                <div class="page-landing__tab-content">
+                  <p class="page-landing__p">
+                    Carbon provides components and styles for all. Whether using Vanilla,
+                    Web Components, React, or another reactive library, you can build with
+                    Carbon.
+                  </p>
+                </div>
+              </cds-column>
+            </cds-grid>
           </div>
         </div>
-
-        <div id="panel-develop" role="tabpanel" aria-labelledby="tab-develop">
-          <div class="cds--subgrid cds--subgrid--full-wide">
-            <div class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-16">
-              <div class="page-landing__tab-content">
-                <p class="page-landing__p">
-                  Carbon provides components and styles for all. Whether using Vanilla,
-                  Web Components, React, or another reactive library, you can build with
-                  Carbon.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="page-landing__r3 cds--css-grid-column cds--col-span-100">
-        <div class="cds--subgrid cds--subgrid--full-wide">
-          <div class="info-section__column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-16 cds--xlg:col-span-4 cds--css-grid-column">
+      </cds-column>
+      <cds-column class="page-landing__r3" span="100%">
+        <cds-grid full-width>
+          <cds-column class="info-section__column page-landing__label" sm="4" md="8" lg="16" xlg="4">            
             <h3 class="info-section__heading">The Principles</h3>
-          </div>
+          </cds-column>
           <div class="info-card">
             Carbon is open
           </div>
@@ -145,13 +146,13 @@
           <div class="info-card">
             Carbon is consistent
           </div>
-        </div>
-      </div>
-    </div>
+        </cds-grid>
+      </cds-column>
+    </cds-grid>
   </main>
 </body>
 <template id="template--info-card">
-  <div class="info-card cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-5 cds--xlg:col-span-4 cds--css-grid-column">
+  <cds-column class="info-card" sm="4" md="8" lg="5" xlg="4">
     <div class="info-card__uppder">
       <h4 class="info-card__heading">Carbon is <strong class="info-card__heading--strong">thing goes here</strong></h4>
       <p class="info-card__body">
@@ -159,7 +160,7 @@
       </p>
     </div>
     <div class="info-card__pictogram"></div>
-  </div>
+  </cds-column>
 </template>
 
 </html>

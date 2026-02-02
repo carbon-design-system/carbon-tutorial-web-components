@@ -17,7 +17,9 @@ const infoCardDetails = [
 ];
 
 const updateInfoCard = (here, { strongMsg, bodyMsg, pictogramName }) => {
-  const infoCardTemplate = document.querySelector('template#template--info-card');
+  const infoCardTemplate = document.querySelector(
+    'template#template--info-card',
+  );
 
   if (here && infoCardTemplate) {
     const newInfoCard = infoCardTemplate.content.cloneNode(true);

@@ -102,12 +102,16 @@ cds-content-switcher-item[selected] .theme-selector__icon {
   mask: url('/moon.svg') no-repeat center;
 }
 
-.page {
-  padding: 0;
+.page :where(.page-landing__banner, .page-landing__r2, .page-landing__r3) {
+  padding-inline: $spacing-06;
+  margin-inline: 0;
 
-  > * {
-    padding-inline: $spacing-06;
-    margin: 0;
+  @include breakpoint-up(md) {
+    margin-inline: -1 * $spacing-05;
+  }
+
+  @include breakpoint-up(max) {
+    margin-inline: -20px;
   }
 }
 
@@ -153,6 +157,10 @@ cds-content-switcher-item[selected] .theme-selector__icon {
   @include type-style('productive-heading-03');
 
   font-weight: font-weight('semibold');
+}
+
+.page-landing__tab-panels {
+  padding-block: $spacing-10;
 }
 
 .page-landing__p {
@@ -215,7 +223,7 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 
 .info-card {
   display: flex;
-  block-size: 300px;
+  block-size: 276px;
   flex-direction: column;
   justify-content: space-between;
   padding-inline: $spacing-05;

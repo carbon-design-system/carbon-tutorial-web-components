@@ -12,7 +12,9 @@ const handleGlobalActionClick = (ev) => {
   });
 };
 const globalActions = document.querySelectorAll('cds-header-global-action');
-[...globalActions].forEach((action) => action.addEventListener('click', handleGlobalActionClick));
+[...globalActions].forEach((action) =>
+  action.addEventListener('click', handleGlobalActionClick),
+);
 
 const handleSwitch = (ev) => {
   // Applies new theme or defers to system preferences by removing theme
@@ -30,9 +32,15 @@ const handleSwitch = (ev) => {
       bodyEl.classList.remove('g100');
   }
 };
-document.querySelector('.theme-selector').addEventListener('cds-content-switcher-selected', handleSwitch);
+document
+  .querySelector('.theme-selector')
+  .addEventListener('cds-content-switcher-selected', handleSwitch);
 
 const handleHeaderCompliment = (ev) => {
-  document.querySelector('cds-header').classList.toggle('compliment', ev.target.checked);
+  document
+    .querySelector('cds-header')
+    .classList.toggle('compliment', ev.target.checked);
 };
-document.querySelector('.theme-header__compliment').addEventListener('cds-checkbox-changed', handleHeaderCompliment);
+document
+  .querySelector('.theme-header__compliment')
+  .addEventListener('cds-checkbox-changed', handleHeaderCompliment);
