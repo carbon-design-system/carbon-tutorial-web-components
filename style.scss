@@ -102,12 +102,12 @@ cds-content-switcher-item[selected] .theme-selector__icon {
   mask: url('/moon.svg') no-repeat center;
 }
 
-.page {
-  padding: 0;
+.page :where(.page-landing__banner, .page-landing__r2, .page-landing__r3) {
+  padding-inline: $spacing-06;
+  margin-inline: -20px;
 
-  > * {
-    padding-inline: $spacing-06;
-    margin: 0;
+  @include breakpoint-down(md) {
+    margin-inline: 0;
   }
 }
 
@@ -150,6 +150,10 @@ cds-content-switcher-item[selected] .theme-selector__icon {
   @include type-style('productive-heading-03');
 
   font-weight: 600;
+}
+
+.page-landing__tab-panels {
+  padding-block: $spacing-10;
 }
 
 .page-landing__p {
