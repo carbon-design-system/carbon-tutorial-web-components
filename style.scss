@@ -104,10 +104,14 @@ cds-content-switcher-item[selected] .theme-selector__icon {
 
 .page :where(.page-landing__banner, .page-landing__r2, .page-landing__r3) {
   padding-inline: $spacing-06;
-  margin-inline: -20px;
+  margin-inline: 0;
 
-  @include breakpoint-down(md) {
-    margin-inline: 0;
+  @include breakpoint-up(md) {
+    margin-inline: -1 * $spacing-05;
+  }
+
+  @include breakpoint-up(max) {
+    margin-inline: -20px;
   }
 }
 
