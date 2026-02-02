@@ -4,6 +4,7 @@ import '@carbon/web-components/es/components/ui-shell/index';
 import '@carbon/web-components/es/components/checkbox/index';
 import '@carbon/web-components/es/components/content-switcher/index';
 import '@carbon/web-components/es/components/skip-to-content/index.js';
+import '@carbon/web-components/es/components/grid/index';
 import '@carbon/web-components/es/components/breadcrumb/index';
 import '@carbon/web-components/es/components/tabs/index';
 const bodyEl = document.querySelector('body');
