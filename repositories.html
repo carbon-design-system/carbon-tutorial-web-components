@@ -64,8 +64,8 @@
     </cds-header>
   </header>
   <main id="main-content" class="main">
-    <div class="page page-repositories cds--css-grid cds--css-grid--full-width">
-      <div class="repo-page__r1 cds--css-grid-column cds--col-span-100">
+    <cds-grid class="page page-repositories" full-width>
+      <cds-column class="repo-page__r1" span="100%">
         <cds-table expandable>
           <cds-table-header-title slot="title">Carbon Repositories</cds-table-header-title>
           <cds-table-header-description slot="description">A collection of public Carbon
@@ -82,8 +82,8 @@
           </cds-table-head>
           <cds-table-body>Table body goes here</cds-table-body>
         </cds-table>
-      </div>
-    </div>
+      </cds-column>
+    </cds-grid>
   </main>
 </body>
 <template id="template--table-row">
